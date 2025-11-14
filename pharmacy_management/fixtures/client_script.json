@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Agency",
+  "enabled": 1,
+  "modified": "2025-11-13 15:29:07.868010",
+  "module": "Agency Management",
+  "name": "Custom Agency List View",
+  "script": "// Copyright (c) 2024, Your Company and contributors\n// For license information, please see license.txt\n\nfrappe.listview_settings['Agency'] = {\n    // Add colored status indicators for Active/Inactive agencies\n    get_indicator: function(doc) {\n        if (doc.is_active === 0) {\n            return [__(\"Inactive\"), \"red\", \"is_active,=,0\"];\n        } else {\n            return [__(\"Active\"), \"green\", \"is_active,=,1\"];\n        }\n    },\n    \n    // Style the entire row based on active status\n    add_fields: [\"is_active\"],\n    \n\n};",
+  "view": "List"
+ }
+]

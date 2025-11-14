@@ -1,0 +1,53 @@
+[
+ {
+  "agency_name": "test 1 agency",
+  "docstatus": 0,
+  "doctype": "Agency",
+  "is_active": 1,
+  "items": [
+   {
+    "item_code": "test 1 item",
+    "lead_time_days": 3,
+    "min_order_qty": 2.0,
+    "parent": "test 1 agency",
+    "parentfield": "items",
+    "parenttype": "Agency"
+   }
+  ],
+  "modified": "2025-11-14 10:22:15.234340",
+  "name": "test 1 agency",
+  "primary_contact": null,
+  "territory": "Germany"
+ },
+ {
+  "agency_name": "test 2 agency",
+  "docstatus": 0,
+  "doctype": "Agency",
+  "is_active": 1,
+  "items": [
+   {
+    "item_code": "test 2 item",
+    "lead_time_days": 1,
+    "min_order_qty": 1.0,
+    "parent": "test 2 agency",
+    "parentfield": "items",
+    "parenttype": "Agency"
+   }
+  ],
+  "modified": "2025-11-14 10:22:59.083170",
+  "name": "test 2 agency",
+  "primary_contact": null,
+  "territory": "Germany"
+ },
+ {
+  "agency_name": "test 3 agency",
+  "docstatus": 0,
+  "doctype": "Agency",
+  "is_active": 0,
+  "items": [],
+  "modified": "2025-11-14 10:23:50.410051",
+  "name": "test 3 agency",
+  "primary_contact": null,
+  "territory": "Canada"
+ }
+]

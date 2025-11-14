@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:agency_name",
+ "creation": "2025-11-13 13:50:16.527578",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "agency_section_section",
+  "agency_name",
+  "territory",
+  "primary_contact",
+  "is_active",
+  "agency_items_section_section",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "agency_section_section",
+   "fieldtype": "Section Break",
+   "label": "Agency Section"
+  },
+  {
+   "fieldname": "agency_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agency Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "primary_contact",
+   "fieldtype": "Data",
+   "label": "Primary Contact"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "agency_items_section_section",
+   "fieldtype": "Section Break",
+   "label": "Agency Items Section"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Agency Item"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-13 15:22:14.441107",
+ "modified_by": "Administrator",
+ "module": "Agency Management",
+ "name": "Agency",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

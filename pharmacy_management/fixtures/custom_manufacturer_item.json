@@ -1,0 +1,22 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom Manufacturer Item",
+  "gtin": null,
+  "item_code": "test 1 item",
+  "manufacturer": "test man 1",
+  "modified": "2025-11-14 15:32:59.968648",
+  "name": "test man 1-test 1 item",
+  "part_number": "test 1 item"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Manufacturer Item",
+  "gtin": null,
+  "item_code": "test 2 item",
+  "manufacturer": "test manu 2",
+  "modified": "2025-11-14 15:33:12.014990",
+  "name": "test manu 2-test 2 item",
+  "part_number": "test 2 item"
+ }
+]

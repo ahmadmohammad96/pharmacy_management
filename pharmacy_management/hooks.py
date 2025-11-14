@@ -242,3 +242,49 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+     {
+        "doctype": "Agency",
+        "filters": [
+            ["name", "in", [
+                "test 1 agency" , 
+                "test 2 agency" , 
+                "test 3 agency"
+                            ]]
+        ]
+    } ,
+     {
+        "doctype": "Item",
+        "filters": [
+            ["name", "in", [
+                "test 1 item" , 
+                "test 2 item" , 
+                "test 3 item"
+                            ]]
+        ]
+    } ,
+{
+        "doctype": "Custom Manufacturer",
+        "filters": [
+            ["name", "in", [
+                "test man 1" , 
+                "test manu 2"  
+                            ]]
+        ]
+    } , {
+        "doctype": "Custom Manufacturer Item",
+        "filters": [
+            ["name", "in", [
+                "test man 1-test 1 item" , 
+                "test manu 2-test 2 item" 
+                            ]]
+        ]
+    } ,{
+        "doctype": "Client Script",
+        "filters": [
+            ["name", "in", [
+                "Custom Agency List View"
+                            ]]
+        ]
+    } ,
+]

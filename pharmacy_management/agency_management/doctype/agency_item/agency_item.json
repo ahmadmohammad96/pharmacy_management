@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-13 13:56:42.869551",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "min_order_qty",
+  "lead_time_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "min_order_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Min Order Qty",
+   "precision": "2"
+  },
+  {
+   "fieldname": "lead_time_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Lead Time Days"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-13 13:59:42.587928",
+ "modified_by": "Administrator",
+ "module": "Agency Management",
+ "name": "Agency Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

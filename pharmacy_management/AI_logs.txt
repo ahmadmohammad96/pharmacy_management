@@ -1,0 +1,182 @@
+
+You said:
+what was the simplest way to export some document in erpnext as fixtures in hooks, i mean the structure 
+ChatGPT said:
+The simplest and cleanest way to export any DocType documents as fixtures in ERPNext/Frappe is to define them inside the hooks.py file using the standard fixtures structure.
+
+Here is the minimal, correct, working structure:
+
+✅ 1. Easiest Fixture Structure (simple filter)
+If you want to export specific documents based on a filter:
+
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {
+            "name": ["like", "my_custom_field_%"]
+        }
+    }
+]
+This will export all Custom Field rows where name starts with my_custom_field_.
+
+✅ 2. Export a Single Document By Name
+fixtures = [
+    {
+        "doctype": "Print Format",
+        "filters": {
+            "name": ["=", "My Custom Print Format"]
+        }
+    }
+]
+✅ 3. Export Multiple DocTypes
+fixtures = [
+    {"doctype": "Custom Field"},
+    {"doctype": "Property Setter"},
+    {"doctype": "Client Script"},
+    {"doctype": "Server Script"}
+]
+⚠️ This exports all documents of the listed DocTypes — use filters if you want only your app’s data.
+
+✅ 4. Export Only Your App's Custom Fields
+ERPNext best practice: filter by module name:
+
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {
+            "module": ["=", "Pharmacy Management"]
+        }
+    },
+    {
+        "doctype": "Property Setter",
+        "filters": {
+            "module": ["=", "Pharmacy Management"]
+        }
+    }
+]
+✅ 5. Export Documents From Your Own Custom DocTypes
+Example: export all rows in your custom DocType:
+
+fixtures = [
+    {
+        "doctype": "Agency",
+        "filters": {}
+    }
+]
+⚠️ Use with care — exporting transactional data is usually not recommended unless it’s setup data only.
+
+📌 Location Where Fixtures Will Be Generated
+When you run:
+
+bench export-fixtures
+Data is exported to:
+
+my_app/fixtures/
+Each file is named like:
+
+custom_field.json
+server_script.json
+agency.json
+⭐ Recommended Pattern (Cleanest, Safe, Used by ERPNext Apps)
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {"module": ["=", "My App Name"]}
+    },
+    {
+        "doctype": "Property Setter",
+        "filters": {"module": ["=", "My App Name"]}
+    },
+    {
+        "doctype": "Client Script",
+        "filters": {"module": ["=", "My App Name"]}
+    },
+    {
+        "doctype": "Server Script",
+        "filters": {"module": ["=", "My App Name"]}
+    }
+]
+Always filter by module → avoids conflicts and prevents pulling unrelated data.
+
+👍 Summary (Simple Template)
+Here is the simplest, copy-paste ready structure:
+
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {
+            "module": ["=", "My App"]
+        }
+    }
+]
+This is the cleanest, safe, ERPNext-recommended format.
+
+If you want, tell me your App name and which DocTypes you want exported, and I can prepare the exact fixtures = [...] block for you.
+
+You said:
+there is name in also , correct ? 
+ChatGPT said:
+Yes — 100% correct.
+You can also filter by name inside fixtures. It is fully supported and commonly used.
+
+Here is the correct structure when using name:
+
+✅ Fixture with name Filter (Correct & Supported)
+✔ Example: export ONE document by exact name:
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {
+            "name": ["=", "my_custom_field_name"]
+        }
+    }
+]
+✅ Export multiple specific documents by name
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {
+            "name": ["in", ["cf_item_code", "cf_customer_group", "cf_territory"]]
+        }
+    }
+]
+✅ Export using name pattern (LIKE)
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {
+            "name": ["like", "agency_%"]
+        }
+    }
+]
+🧠 Important Notes About name Filter
+✔ Works for all DocTypes
+✔ name is always the document's unique ID
+✔ Use = for single, in for multiple, like for patterns
+✔ Works perfectly with bench export-fixtures
+✔ Output files will contain only those specific documents
+
+⭐ Combine name + module (best practice)
+If you want to limit fixtures to only your app's data, do:
+
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": {
+            "module": ["=", "Pharmacy Management"],
+            "name": ["like", "pharmacy_%"]
+        }
+    }
+]
+🎯 Final Confirmation
+✔ Yes, name absolutely exists
+✔ Yes, it is valid in fixtures
+✔ Yes, it is the simplest way to export specific documents
+
+If you want, tell me what DocType + names you want to export, and I will generate the cleanest fixture block for your app.
+
+
+
+
+No file chosenNo file chosen
+ChatGPT can make mistakes. Check important info.
